@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal The Future</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "css/form.css">
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+	<py-env>  
+		- pickle
+		- sklearn
+	</py-env>
+<link rel = "stylesheet" href = "css/main.css">
+<div class="container">  
+		<form class="contact" action="result.html" method="post" onsubmit="">
+			<h3 style="text-align: center; font-weight: bold;">Heart Attack Survey Form</h3><br>
+			
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Full name">Full name</label>
+						<input placeholder="Full name" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+					</div>
+					<div class="wd50">
+						<label name="Age">Age</label><br>
+						<input placeholder="Age" type="number" min="1" max="150" id="Ages" required style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;">
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Gender">Gender</label>
+						<select id="Gender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Maximum Heart Rate">Maximum Heart Rate Achieved</label><br>
+						<input placeholder="in BPM" type="number" min="20" max="220" id="MHR" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col50 colright">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Resting Blood Pressure">Resting Blood Pressure</label><br>
+						<input placeholder="in mmHg" type="number" min="20" max="250" id="RBP" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%; margin-bottom: 1%;" required>
+					</div>
+					<div class="wd50">
+						<label name="Serum Cholestoral">Serum Cholestoral</label><br>
+						<input placeholder="in mg/dl" type="number" min="10" max="800" id="SC" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Chest Pain Type">Chest Pain Type</label>
+						<select id="CPT">
+							<option value="Typical angina">Typical angina</option>
+							<option value="Atypical angina">Atypical angina</option>
+							<option value="Non-anginal pain">Non-anginal pain</option>
+							<option value="Asymptomatic">Asymptomatic</option>				
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Exercise Induced Angina">Exercise Induced Angina</label>
+						<select id="EIA">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 
+					</div>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="Resting Electrocardiographic Results">Resting Electrocardiographic Results</label>
+					<select id="RER">
+						<option value="Normal">Normal</option>
+						<option value="Having ST-T wave abnormality">Having ST-T wave abnormality</option>
+						<option value="Left Ventricular Hypertrophy">Showing probable or definite left ventricular hypertrophy</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="Fasting Blood Sugar">Is Fasting Blood Sugar more than 120 mg/dl?</label>
+					<select id="FBS">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+				<div class="wd100">
+					<label name="ST Depression">ST Depression Induced by Exercise Relative to Rest</label><br>
+					<input placeholder="0 to 10" type="number" min="0" max="10" id="ST" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="Slope">Slope of the peak exercise ST segment</label>
+					<select id="Slope">
+						<option value="upsloping">Upsloping</option>
+						<option value="flat">Flat</option>
+						<option value="downsloping">Downsloping</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="Major Vessels">Number of Major Vessels Colored by Flourosopy</label><br>
+					<input placeholder="0 to 3" type="number" min="0" max="3" id="MV" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+				<div class="wd100">
+					<label name="Thalassemia">Thalassemia</label>
+					<select id="Thal">
+						<option value="normal">Normal</option>
+						<option value="fixed defect">Fixed defect</option>
+						<option value="reversable defect">Reversable defect</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+
+			<div class="wd100">
+				<button pys-onClick="sub" name="submit" type="submit" id="btn-form" data-submit="...Sending">Submit</button>
+			</div>
+			
+		</form>
+	</div>
+    <p id = 'output'></p>
+    <py-script>
+		def sub(*args,**kwargs):
+			import pickle
+			heart_model = "https://github.com/naim-2/Public-Android-Studio-Projects/blob/main/AES3/build.gradle"
+			loaded_model = pickle.load(open(heart_model, 'rb'))
+			result2 = loaded_model.predict([[0,0,0,0,0,0,0,0,0,0,0,0,0]])
+			print(result2)
+	</py-script>
+    </body>
+</html>

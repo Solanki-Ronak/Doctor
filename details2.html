@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal The Future</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "css/form.css">
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+	<py-env>  
+		- pickle
+		- sklearn
+	</py-env>
+<link rel = "stylesheet" href = "css/main.css">
+<div class="container">  
+		<form class="contact" action="result2.html" method="post" onsubmit="">
+			<h3 style="text-align: center; font-weight: bold;">COVID-19 Survey Form</h3><br>
+			
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Full name">Full name</label>
+						<input placeholder="Full name" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+					</div>
+					<div class="wd50">
+						<label name="Age">Age</label><br>
+						<input placeholder="Age" type="number" min="1" max="150" id="Ages" required style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;">
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Gender">Gender</label>
+						<select id="Gender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Fever">Do you have fever?</label><br>
+                        <select id="Fever">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 
+                    </div>
+				</div>
+			</div>
+			
+			<div class="col50 colright">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Tiredness">Do you experience tiredness?</label><br>
+                        <select id="Tiredness">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 					</div>
+					<div class="wd50">
+						<label name="Dry-Cough">Do you have a dry cough?</label><br>
+                        <select id="Dry-Cough">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Difficulty-in-Breathing">Is there difficulty in breathing?</label><br>
+                        <select id="Difficulty-in-Breathing">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Sore-Throat">Do you have a sore throat?</label><br>
+                        <select id="Sore-Throat">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="Pains">Do you experience any pains?</label><br>
+                    <select id="Pains">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select> 
+				</div>
+				<div class="wd100">
+					<label name="Nasal-Congestion">Do you have a nasal congestion?</label><br>
+                    <select id="Nasal-Congestion">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+				</div>
+				<div class="wd100">
+					<label name="Runny-Nose">Do you have a runny nose?</label><br>
+                    <select id="Runny-Nose">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+                    <label name="Diarrhea">Do you have diarrhea?</label><br>
+                    <select id="Diarrhea">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+				</div>
+				<div class="wd100">
+					<label name="Severity">What is the severity of the signs and symptoms?</label><br>
+                    <select id="Severity">
+						<option value="None">None</option>
+						<option value="Mild">Mild</option>
+						<option value="Moderate">Moderate</option>
+                        <option value="Severe">Severe</option>
+					</select> 				
+                </div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+
+			<div class="wd100">
+				<button pys-onClick="sub" name="submit" type="submit" id="btn-form" data-submit="...Sending">Submit</button>
+			</div>
+			
+		</form>
+	</div>
+    <p id = 'output'></p>
+    <py-script>
+		def sub(*args,**kwargs):
+			import pickle
+			heart_model = "https://github.com/naim-2/Public-Android-Studio-Projects/blob/main/AES3/build.gradle"
+			loaded_model = pickle.load(open(heart_model, 'rb'))
+			result2 = loaded_model.predict([[0,0,0,0,0,0,0,0,0,0,0,0,0]])
+			print(result2)
+	</py-script>
+    </body>
+</html>

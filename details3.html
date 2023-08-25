@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal The Future</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "css/form.css">
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+	<py-env>  
+		- pickle
+		- sklearn
+	</py-env>
+<link rel = "stylesheet" href = "css/main.css">
+<div class="container">  
+		<form class="contact" action="result3.html" method="post" onsubmit="">
+			<h3 style="text-align: center; font-weight: bold;">Breast Cancer Survey Form</h3><br>
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Full name">Full name</label>
+						<input placeholder="Full name" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+					</div>
+					<div class="wd50">
+						<label name="Age">Age</label><br>
+						<input placeholder="Age" type="number" min="1" max="150" id="Ages" required style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;">
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Gender">Gender</label>
+						<select id="Gender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Clump Thickness">Clump Thickness Level</label><br>
+						<input placeholder="1 to 10" type="number" min="1" max="10" id="CT" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col50 colright">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Uniformity of Cell Size">Uniformity of Cell Size</label><br>
+						<input placeholder="1 to 10" type="number" min="1" max="10" id="UCSZ" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%; margin-bottom: 1%;" required>
+					</div>
+					<div class="wd50">
+						<label name="Uniformity of Cell Shape">Uniformity of Cell Shape</label><br>
+						<input placeholder="1 to 10" type="number" min="1" max="10" id="UCSP" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Marginal Adhesion">Marginal Adhesion Level</label><br>
+						<input placeholder="1 to 10" type="number" min="1" max="10" id="MA" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%; margin-bottom: 1%;" required>
+					</div>
+					<div class="wd50">
+						<label name="Single Epithelial Cell Size">Single Epithelial Cell Size Level</label><br>
+						<input placeholder="1 to 10" type="number" min="1" max="10" id="SECS" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="Bare Nuclei">Bare Nuclei Level</label>
+					<input placeholder="1 to 10" type="number" min="1" max="10" id="BN" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+				<div class="wd100">
+					<label name="Bland Chromatin">Bland Chromatin Level</label>
+					<input placeholder="1 to 10" type="number" min="1" max="10" id="BC" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="Normal Nucleoli">Normal Nucleoli Level</label><br>
+					<input placeholder="1 to 10" type="number" min="1" max="10" id="NN" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+				<div class="wd100">
+					<label name="Mitoses">Mitoses Level</label><br>
+					<input placeholder="1 to 10" type="number" min="1" max="10" id="M" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+
+			<div class="wd100">
+				<button pys-onClick="sub" name="submit" type="submit" id="btn-form" data-submit="...Sending">Submit</button>
+			</div>
+			
+		</form>
+	</div>
+    <p id = 'output'></p>
+    <py-script>
+		def sub(*args,**kwargs):
+			import pickle
+			heart_model = "https://github.com/naim-2/Public-Android-Studio-Projects/blob/main/AES3/build.gradle"
+			loaded_model = pickle.load(open(heart_model, 'rb'))
+			result2 = loaded_model.predict([[0,0,0,0,0,0,0,0,0,0,0,0,0]])
+			print(result2)
+	</py-script>
+    </body>
+</html>

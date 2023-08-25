@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal The Future</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "css/form.css">
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+	<py-env>  
+		- pickle
+		- sklearn
+	</py-env>
+<link rel = "stylesheet" href = "css/main.css">
+<div class="container">  
+		<form class="contact" action="" method="post" onsubmit="return false">
+			<h3>Survey Form</h3>
+			
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Full name">Full name</label>
+						<input placeholder="Full name" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+					</div>
+					<div class="wd50">
+						<label name="Age">Age</label><br>
+						<input placeholder="Age" type="number" min="1" max="150" id="Ages" required style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;">
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Gender">Gender</label>
+						<select id="Gender">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Maximum Heart Rate">Maximum Heart Rate Achieved</label><br>
+						<input placeholder="in BPM" type="number" min="20" max="220" id="MHR" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col50 colright">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="Resting Blood Pressure">Resting Blood Pressure</label><br>
+						<input placeholder="in mmHg" type="number" min="20" max="250" id="RBP" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%; margin-bottom: 1%;" required>
+					</div>
+					<div class="wd50">
+						<label name="Serum Cholestoral">Serum Cholestoral</label><br>
+						<input placeholder="in mg/dl" type="number" min="10" max="800" id="SC" style="width: 100%; height: 200%; padding: 1%; padding-left: 3%;" required>
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="Chest Pain Type">Chest Pain Type</label>
+						<select id="CPT">
+							<option value="Typical angina">Typical angina</option>
+							<option value="Atypical angina">Atypical angina</option>
+							<option value="Non-anginal pain">Non-anginal pain</option>
+							<option value="Asymptomatic">Asymptomatic</option>				
+						</select> 
+					</div>
+					<div class="wd50">
+						<label name="Exercise Induced Angina">Exercise Induced Angina</label>
+						<select id="EIA">
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select> 
+					</div>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd50">
+					<label name="Resting Electrocardiographic Results">Resting Electrocardiographic Results</label>
+					<select id="RER">
+						<option value="Normal">Normal</option>
+						<option value="Having ST-T wave abnormality">Having ST-T wave abnormality</option>
+						<option value="Left Ventricular Hypertrophy">Showing probable or definite left ventricular hypertrophy</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="Fasting Blood Sugar">Is Fasting Blood Sugar more than 120 mg/dl?</label>
+					<select id="FBS">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+				<div class="wd100">
+					<label name="ST Depression">ST Depression Induced by Exercise Relative to Rest</label><br>
+					<input placeholder="0 to 10" type="number" min="0" max="10" id="ST" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="Slope">Slope of the peak exercise ST segment</label>
+					<select id="Slope">
+						<option value="upsloping">Upsloping</option>
+						<option value="flat">Flat</option>
+						<option value="downsloping">Downsloping</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="Major Vessels">Number of Major Vessels Colored by Flourosopy</label><br>
+					<input placeholder="0 to 3" type="number" min="0" max="3" id="MV" style="width: 100%; height: 200%; padding: 0.5%; padding-left: 1.5%; margin-bottom: 1%;" required>
+				</div>
+				<div class="wd100">
+					<label name="Thalassemia">Thalassemia</label>
+					<select id="Thal">
+						<option value="normal">Normal</option>
+						<option value="fixed defect">Fixed defect</option>
+						<option value="reversable defect">Reversable defect</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="wd100">
+				<label name="">Reason for Not Taking Treatment Or Giving less rating with DR experience</label>
+				<p><strong>GRID Multiple selection</strong></p>
+			</div>
+
+			<div class="wd100 question-checkbox">
+				<div class="col50 colleft">
+					<p>Expensive</p>
+					<label name=""><input type="checkbox" value=""> Price</label>
+
+					<p>Not sufficient time</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Was pushy/Only focused on price</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>No assurance was given</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Long term Packages</p>
+					<label name=""><input type="checkbox" value=""> Treatment Duration</label>
+
+					<p>Dint allow to meet Doctor</p>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Washroom</p>
+					<label name=""><input type="checkbox" value=""> Hygiene</label>
+
+					<p>Treatment machines not clean</p>
+					<label name=""><input type="checkbox" value=""> Hygiene</label>
+
+					<p>No proper check up by</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+				</div>
+
+				<div class="col50 colright">
+					<p>No option for part payment given</p>
+					<label name=""><input type="checkbox" value=""> Price</label>
+
+					<p>Questions not answered/confident</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Rude</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Not Satisfied in general</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Aliment not treated at DRB</p>
+					<label name=""><input type="checkbox" value=""> Treatment Duration</label>
+
+					<p>Give medicines for 2 days &amp; Ask to come later</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Unprofessional Behavior/getup</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Asked to Pay today or No discount</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+					<label name=""><input type="checkbox" value=""> Discount</label>
+				</div>
+			</div>
+
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Rate Overall experience (5 being Excellent &amp; 1 being lowest )</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Sir/ Mam if we can find a solution for your concern would you be "ok" to receive a call back? (in case of any concerns raised) </label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Doctor quote (to be filled only if required)</label>
+					<textarea placeholder="Insert text here ..." required></textarea>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Patient can pay ( to be filled only if required)</label>
+					<textarea placeholder="Insert text here ..." required></textarea>
+				</div>
+			</div>
+
+			<div class="wd100">
+				<label name="">Notes</label>
+				<textarea placeholder="Insert text here ..." required></textarea>
+			</div>
+			
+			<div class="wd100">
+				<button pys-onClick="" name="submit" type="submit" id="btn-form" data-submit="...Sending">Submit</button>
+			</div>
+		</form>
+	</div>
+    <p>Output:</p>
+    <p id = 'output'></p>
+    <py-script>
+
+	</py-script>
+    </body>
+</html>
